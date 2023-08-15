@@ -48,7 +48,7 @@ function leftPattern(n) {
   }
 }
 
-leftPattern(5)
+// leftPattern(5)
 
 // *
 // **
@@ -56,6 +56,14 @@ leftPattern(5)
 // ****
 // *****
 
+function paddedRow(i,mid) {
+  let numberOfStars = (2*i)-1;
+  let row = ''.padStart(numberOfStars,'*');
+  let spaceFromLeft = mid - 1;
+  let totalLength = spaceFromLeft + i;
+  row = row.padStart(totalLength,' ');
+  console.log(row);
+}
 
 function centerPattern(n) {
   
@@ -63,16 +71,11 @@ function centerPattern(n) {
   let mid = Math.ceil(biggestRow/2)
   
   for (let i = 1; i <= n; i++) {
-    let numberOfStars = (2*i)-1;
-    let row = ''.padStart(numberOfStars,'*');
-    let spaceFromLeft = mid - 1;
-    let totalLength = spaceFromLeft + i;
-    row = row.padStart(totalLength,' ');
-    console.log(row);
+    paddedRow(i, mid)
   }
 }
 
-// centerPattern(5)
+centerPattern(5)
 
 //     *
 //    ***

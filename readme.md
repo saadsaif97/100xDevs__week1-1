@@ -41,17 +41,21 @@ console.log(getFibonacci(5)) // [0, 1, 1, 2, 3]
 ```
 - leftPattern
 ```JavaScript
-function leftPattern(n) {
-  for (let i = 0; i < n; i++) {
-    let row = ''
+function starRow(i) {
+  let row = ''
     for (let j = 0; j <= i; j++) {
       row += "*"
     }
     console.log(row)
+}
+
+function leftPattern(n) {
+  for (let i = 0; i < n; i++) {
+    starRow(i)
   }
 }
 
-// pattern(5)
+leftPattern(5)
 
 // *
 // **
@@ -61,18 +65,22 @@ function leftPattern(n) {
 ```
 - centerPattern
 ```JavaScript
+function paddedRow(i,mid) {
+  let numberOfStars = (2*i)-1;
+  let row = ''.padStart(numberOfStars,'*');
+  let spaceFromLeft = mid - 1;
+  let totalLength = spaceFromLeft + i;
+  row = row.padStart(totalLength,' ');
+  console.log(row);
+}
+
 function centerPattern(n) {
   
   let biggestRow = (2*n)-1
   let mid = Math.ceil(biggestRow/2)
   
   for (let i = 1; i <= n; i++) {
-    let numberOfStars = (2*i)-1;
-    let row = ''.padStart(numberOfStars,'*');
-    let spaceFromLeft = mid - 1;
-    let totalLength = spaceFromLeft + i;
-    row = row.padStart(totalLength,' ');
-    console.log(row);
+    paddedRow(i, mid)
   }
 }
 
