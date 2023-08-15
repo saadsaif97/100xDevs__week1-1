@@ -28,8 +28,27 @@ function getFibonacci(n) {
   return addToSeries(n)
 }
 
-console.log(getFibonacci(1)) // [0]
-console.log(getFibonacci(2)) // [0, 1]
-console.log(getFibonacci(3)) // [0, 1, 1]
-console.log(getFibonacci(4)) // [0, 1, 1, 2]
-console.log(getFibonacci(5)) // [0, 1, 1, 2, 3]
+// console.log(getFibonacci(1)) // [0]
+// console.log(getFibonacci(2)) // [0, 1]
+// console.log(getFibonacci(3)) // [0, 1, 1]
+// console.log(getFibonacci(4)) // [0, 1, 1, 2]
+// console.log(getFibonacci(5)) // [0, 1, 1, 2, 3]
+
+
+function pattern(n) {
+  for (let i = 0; i < n; i++) {
+    let row = ''
+    for (let j = 0; j <= i; j++) {
+      row += "*"
+    }
+    console.log(row)
+  }
+}
+
+pattern(5)
+
+// *
+// **
+// ***
+// ****
+// *****
