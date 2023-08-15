@@ -34,18 +34,21 @@ function getFibonacci(n) {
 // console.log(getFibonacci(4)) // [0, 1, 1, 2]
 // console.log(getFibonacci(5)) // [0, 1, 1, 2, 3]
 
-
-function leftPattern(n) {
-  for (let i = 0; i < n; i++) {
-    let row = ''
+function starRow(i) {
+  let row = ''
     for (let j = 0; j <= i; j++) {
       row += "*"
     }
     console.log(row)
+}
+
+function leftPattern(n) {
+  for (let i = 0; i < n; i++) {
+    starRow(i)
   }
 }
 
-// pattern(5)
+leftPattern(5)
 
 // *
 // **
@@ -69,7 +72,7 @@ function centerPattern(n) {
   }
 }
 
-centerPattern(5)
+// centerPattern(5)
 
 //     *
 //    ***
