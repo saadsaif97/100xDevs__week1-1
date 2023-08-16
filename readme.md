@@ -119,3 +119,42 @@ centerPattern(5)
 // 1,3,5,7,9
 
 ```
+- hollowSquare
+```JavaScript
+function printFullLine(n) {
+  let row = ''
+  for (let i = 0; i < n; i++) {
+    row+='*'
+  }
+  console.log(row)
+}
+
+function printHollowLine(n) {
+  let row = ''
+  for (let i = 0; i < n; i++) {
+    if (i == 0 || i == n-1) {
+      row+='*'
+    } else {
+      row+=' ' 
+    }
+  }
+  console.log(row)
+}
+
+function hollowSquare(n) {
+  for (let i = 0; i < n; i++) {
+    if (i == 0 || i == n-1) {
+      printFullLine(n)
+    } else {
+      printHollowLine(n)
+    }
+  }
+}
+
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+```

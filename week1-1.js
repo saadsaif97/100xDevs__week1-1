@@ -10,15 +10,18 @@ fs.readFile('config.json', 'utf8', (err, data) => {
    * @property {number} fibonacci
    * @property {number} leftPattern
    * @property {number} centerPattern
+   * @property {number} hollowSquare
    * 
    */
   /** @type {Config} */
   const config = JSON.parse(data)
   
-  console.log(sumTillNumber(config.sum))
-  console.log(getFibonacci(config.fibonacci))
-  console.log(leftPattern(config.leftPattern))
-  console.log(centerPattern(config.centerPattern))
+  // console.log(sumTillNumber(config.sum))
+  // console.log(getFibonacci(config.fibonacci))
+  // console.log(leftPattern(config.leftPattern))
+  // console.log(centerPattern(config.centerPattern))
+  console.log(hollowSquare(config.hollowSquare))
+  
 });
 
 
@@ -109,3 +112,38 @@ function centerPattern(n) {
 // 1,3,5,7,9
 
 
+function printFullLine(n) {
+  let row = ''
+  for (let i = 0; i < n; i++) {
+    row+='*'
+  }
+  console.log(row)
+}
+
+function printHollowLine(n) {
+  let row = ''
+  for (let i = 0; i < n; i++) {
+    if (i == 0 || i == n-1) {
+      row+='*'
+    } else {
+      row+=' ' 
+    }
+  }
+  console.log(row)
+}
+
+function hollowSquare(n) {
+  for (let i = 0; i < n; i++) {
+    if (i == 0 || i == n-1) {
+      printFullLine(n)
+    } else {
+      printHollowLine(n)
+    }
+  }
+}
+
+// *****
+// *   *
+// *   *
+// *   *
+// *****
