@@ -123,32 +123,21 @@ centerPattern(5)
 ```JavaScript
 function printFullLine(n) {
   let row = ''
-  for (let i = 0; i < n; i++) {
-    row+='*'
-  }
+  for (let i = 0; i < n; i++) row+='*'
   console.log(row)
 }
 
 function printHollowLine(n) {
-  let row = ''
-  for (let i = 0; i < n; i++) {
-    if (i == 0 || i == n-1) {
-      row+='*'
-    } else {
-      row+=' ' 
-    }
-  }
+  let row = '*'
+  for (let i = 0; i < n-2; i++) row+=' '
+  row+='*'
   console.log(row)
 }
 
 function hollowSquare(n) {
-  for (let i = 0; i < n; i++) {
-    if (i == 0 || i == n-1) {
-      printFullLine(n)
-    } else {
-      printHollowLine(n)
-    }
-  }
+  printFullLine(n)
+  for (let i = 0; i < n-2; i++) printHollowLine(n)
+  printFullLine(n)
 }
 
 // *****
