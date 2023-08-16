@@ -1,4 +1,29 @@
 ### warmup
+- read config from file and use it
+```JavaScript
+const fs = require('fs')
+
+fs.readFile('config.json', 'utf8', (err, data) => {
+  if (err) throw new Error('Error reading file')
+  
+  
+  /**
+   * @typedef {Object} Config
+   * @property {number} sum
+   * @property {number} fibonacci
+   * @property {number} leftPattern
+   * @property {number} centerPattern
+   * 
+   */
+  /** @type {Config} */
+  const config = JSON.parse(data)
+  
+  console.log(sumTillNumber(config.sum))
+  console.log(getFibonacci(config.fibonacci))
+  console.log(leftPattern(config.leftPattern))
+  console.log(centerPattern(config.centerPattern))
+});
+```
 - sumTillNumber
 ```JavaScript
 function sumTillNumber(n) {

@@ -1,3 +1,27 @@
+const fs = require('fs')
+
+fs.readFile('config.json', 'utf8', (err, data) => {
+  if (err) throw new Error('Error reading file')
+  
+  
+  /**
+   * @typedef {Object} Config
+   * @property {number} sum
+   * @property {number} fibonacci
+   * @property {number} leftPattern
+   * @property {number} centerPattern
+   * 
+   */
+  /** @type {Config} */
+  const config = JSON.parse(data)
+  
+  console.log(sumTillNumber(config.sum))
+  console.log(getFibonacci(config.fibonacci))
+  console.log(leftPattern(config.leftPattern))
+  console.log(centerPattern(config.centerPattern))
+});
+
+
 function sumTillNumber(n) {
   if (n == 1) return 1
   return n + sumTillNumber(--n)
@@ -75,7 +99,7 @@ function centerPattern(n) {
   }
 }
 
-centerPattern(5)
+// centerPattern(5)
 
 //     *
 //    ***
@@ -83,3 +107,5 @@ centerPattern(5)
 //  *******
 // *********
 // 1,3,5,7,9
+
+
